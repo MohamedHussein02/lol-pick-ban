@@ -6,10 +6,10 @@
   bottom: var(--champselect-margin-bot);
 
   .TeamName {
-    font-size: 40px;
+    font-size: 50px;
     color: white;
-    font-family: 'Saira Condensed', sans-serif;
-    margin-top: -15px;
+    font-family: 'Bebas', sans-serif;
+    margin-top: 15px;
 
     &.WithoutCoaches {
       font-size: 60px;
@@ -44,15 +44,11 @@
 
     .Bans {
       justify-content: flex-end;
-      background-color: var(--color-blue);
-      border: solid var(--color-blue) var(--border-width);
       float: right;
 
       .Ban {
-        border-left: solid var(--color-blue) var(--border-width);
-
         .BanImage.Active::before {
-          background-image: linear-gradient(to left, var(--color-blue) 0%, rgba(0, 0, 0, 0) 50%, var(--color-blue) 100%);
+          background: var(--color-blue);
         }
       }
     }
@@ -60,14 +56,13 @@
     .Picks {
       .Pick {
         .PickImage.Active::before {
-          background-image: linear-gradient(to left, var(--color-blue) 0%, rgba(0, 0, 0, 0) 50%, var(--color-blue) 100%);
+          background: var(--color-blue);
         }
       }
     }
 
     .TeamName {
       margin-right: auto;
-      margin-left: 15px;
     }
   }
 
@@ -79,12 +74,9 @@
     }
 
     .Bans {
-      background-color: var(--color-red);
-      border: solid var(--color-red) var(--border-width);
       float: left;
 
       .Ban {
-        border-right: solid var(--color-red) var(--border-width);
 
         .BanImage.Active::before {
           background-image: linear-gradient(to left, var(--color-red) 0%, rgba(0, 0, 0, 0) 50%, var(--color-red) 100%);
@@ -103,7 +95,6 @@
     .TeamName {
       margin-left: auto;
       text-align: right;
-      margin-right: 15px;
     }
   }
 }

@@ -1,6 +1,6 @@
 {
   "frontend": {
-    "scoreEnabled": true,
+    "scoreEnabled": false,
     "spellsEnabled": true,
     "coachesEnabled": true,
     "blueTeam": {

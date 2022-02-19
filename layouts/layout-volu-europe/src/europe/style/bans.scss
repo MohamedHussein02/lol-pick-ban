@@ -6,8 +6,8 @@
 
   .Ban {
     display: block;
-    width: calc(var(--box-ban-height) - calc(2 * var(--border-width)));
-    height: calc(var(--box-ban-height) - calc(2 * var(--border-width)));
+    width: calc(var(--box-ban-height) / 0.8);
+    height: calc(var(--box-ban-height) / 0.8);
     overflow: hidden;
     position: relative;
 
@@ -44,7 +44,7 @@
 }
 
 .BansWrapper {
-  overflow: hidden;
+  overflow: visible;
 }
 
 .BansBox {

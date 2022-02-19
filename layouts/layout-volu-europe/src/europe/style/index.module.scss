@@ -9,6 +9,7 @@ body {
     background-size: cover;
 
     overflow: hidden;
+    background: black;
 }
 
 * {
@@ -64,4 +65,18 @@ body {
 
     @import "./timer";
     @import "./team";
+}
+
+.HorizontalTimer {
+    border-radius: 1px;
+    width: calc(calc(var(--box-team-width) * 2) * 1.1);
+    height: 10px;
+    position: absolute;
+    bottom: calc(var(--champselect-margin-bot) + var(--box-height));
+    background: linear-gradient(to right, #FFCB44, #FE2E2D);
+    left: calc(calc(50% + calc(var(--box-width) / 2)) - calc(var(--box-team-width) * 1.2));
+
+    &__transition {
+        transition: transform 1000ms linear;
+    }
 }
