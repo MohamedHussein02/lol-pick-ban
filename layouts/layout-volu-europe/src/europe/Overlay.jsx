@@ -81,7 +81,7 @@ export default class Overlay extends React.Component {
                 {Object.keys(state).length !== 0 &&
                 <div className={cx(css.ChampSelect)}>
                     {!state.leagueConnected && <div className={cx(css.infoBox)}>Not connected to client!</div> }
-                    <div className={cx(css.HorizontalTimer) + " " + (state.timer != 30 ? cx(css.HorizontalTimer__transition) : "")} style={{"transform": `scaleX(${state.timer/30})`}}>
+                    <div className={cx(css.HorizontalTimer) + " " + (state.timer != 30 ? cx(css.HorizontalTimer__transition) : "")} style={{"transform": `scaleX(${Math.min(state.timer/30, 1)})`}}>
                     </div>
                     <div className={cx(css.MiddleBox)}>
                         <div className={cx(css.Logo)}>
