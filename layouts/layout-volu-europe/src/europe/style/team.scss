@@ -79,7 +79,7 @@
       .Ban {
 
         .BanImage.Active::before {
-          background-image: linear-gradient(to left, var(--color-red) 0%, rgba(0, 0, 0, 0) 50%, var(--color-red) 100%);
+          background: var(--color-red);
         }
       }
     }
@@ -87,7 +87,7 @@
     .Picks {
       .Pick {
         .PickImage.Active::before {
-          background-image: linear-gradient(to left, var(--color-red) 0%, rgba(0, 0, 0, 0) 50%, var(--color-red) 100%);
+          background: var(--color-red);
         }
       }
     }
