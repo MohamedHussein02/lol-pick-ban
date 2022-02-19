@@ -65,9 +65,6 @@ export default class Overlay extends React.Component {
                         {teamName === css.TeamRed && renderBans(teamState)}
                         <div className={cx(css.TeamName, {[css.WithoutCoaches]: !config.frontend.coachesEnabled})}>
                             {teamConfig.name}
-                            {config.frontend.coachesEnabled && <div className={css.CoachName}>
-                                Coach: {teamConfig.coach}
-                            </div>}
                         </div>
                         {teamName === css.TeamBlue && renderBans(teamState)}
                         {teamName === css.TeamRed && config.frontend.scoreEnabled && <div className={css.TeamScore}>
@@ -79,17 +76,16 @@ export default class Overlay extends React.Component {
         );
 
         return (
-            <div className={cx(css.Overlay, css.Europe, this.state.currentAnimationState)} style={{"--color-red": config.frontend.redTeam.color, "--color-blue": config.frontend.blueTeam.color}}>
+            <div className={cx(css.Overlay, css.Europe, this.state.currentAnimationState)} >
                 {Object.keys(state).length === 0 && <div className={cx(css.infoBox)}>Not connected to backend service!</div>}
                 {Object.keys(state).length !== 0 &&
                 <div className={cx(css.ChampSelect)}>
                     {!state.leagueConnected && <div className={cx(css.infoBox)}>Not connected to client!</div> }
+                    <div className={cx(css.HorizontalTimer) + " " + (state.timer != 30 ? cx(css.HorizontalTimer__transition) : "")} style={{"transform": `scaleX(${state.timer/30})`}}>
+                    </div>
                     <div className={cx(css.MiddleBox)}>
                         <div className={cx(css.Logo)}>
                             <img src={logo} alt="" />
-                        </div>
-                        <div className={cx(css.Patch)}>
-                            {state.state}
                         </div>
                         <div className={cx(css.Timer, {
                             [`${css.Red} ${css.Blue}`]: !state.blueTeam.isActive && !state.redTeam.isActive,
@@ -98,10 +94,6 @@ export default class Overlay extends React.Component {
                         })}>
                             <div className={cx(css.Background, css.Blue)} />
                             <div className={cx(css.Background, css.Red)} />
-                            {state.timer < 100 && <div className={cx(css.TimerChars)}>
-                                {state.timer.toString().split('').map((char, idx) => <div key={`div-${idx}`}
-                                    className={cx(css.TimerChar)}>{char}</div>)}
-                            </div>}
                             {state.timer >= 100 && <div className={cx(css.TimerChars)}>
                                 {state.timer}
                             </div>}
